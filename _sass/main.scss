@@ -72,15 +72,15 @@ main {
   max-width: $maxWidth;
 }
 
+// Article
 .caption {
   display: flex;
   h3, .book {
     margin-top: var(--spacing-5);
     margin-bottom: 0;
-    font-weight: normal;
   }
   .book {
-    // padding-top: 2px;
+    padding-top: var(--spacing-px);
     padding-left: var(--spacing-1);
   }
   h3 {

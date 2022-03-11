@@ -6,7 +6,7 @@ title: Top Page
 <main>
   <div class="caption">
     <div class="book">{% include icons/book-open.svg %}</div>
-    <h3>ARTICLE</h3>
+    <h3>Article</h3>
   </div>
     <aside>
       {% for post in site.posts %}
