@@ -1,0 +1,8 @@
+url: https://justgetwet.github.io
+baseurl: /test
+lang: ja-JP
+title: Github Pages
+description: create a theme of jekyll
+
+plugins:
+  - jemoji

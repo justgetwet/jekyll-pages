@@ -1,0 +1,15 @@
+<nav>
+  {% if page.previous %}
+    <div>{%- include icons/chevron-left.svg -%}</div>
+    <a href="{{ page.previous.url | relative_url }}" title="Previous Post: {{page.previous.title}}">
+      PREV
+    </a>
+  {% endif %}
+  <div class="blank"></div>
+  {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" title="Next Post: {{page.next.title}}">
+      NEXT
+    </a>
+    <div>{%- include icons/chevron-right.svg -%}</div>
+  {% endif %}
+</nav>

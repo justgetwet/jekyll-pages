@@ -1,0 +1,231 @@
+@import url(styles.css);
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Damion&family=Rock+Salt&display=swap');
+
+$headerFont: Calibri, Candara, Segoe, "Segoe U", Optima, Arial, sans-serif; // Candar
+$blue: #092237;
+$gray: #3b3b3b;
+// $lightgray: #e6e5ef;
+$lightgray: #faf9fb;
+$headerHeight: 21rem;
+$maxWidth: 52rem;
+// heroicons
+.h-6, .w-6 {
+  padding-top: 5px;
+  height: 20px;
+  width: 20px;
+  color: $blue;
+}
+// font awesome icons
+.fa-github {
+  width: 31px; // 496
+  height: 32px; // 16 / 512
+}
+.fa-twitter-square {
+  width: 28px; // 448
+  height: 32px; // 512
+}
+.fa-pinterest {
+  width: 31px; // 496
+  height: 32px; // 512
+}
+
+body {
+  background-color: $lightgray;
+  font-family: var(--bodyFont);
+}
+
+header {
+  background-color: $blue;
+  height: $headerHeight;
+
+  h1, h2, .header-icons {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    padding-left: var(--spacing-3);
+  }
+
+  h1 {
+    padding-top: 4rem;
+    font-size: var(--fontSize-8);
+    color: var(--backgroundColor);
+  }
+  h2 {
+    font-size: var(--fontSize-5);
+    color: var(--ghBorderColor);
+  }
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+  .header-icons {
+    display: flex;
+    padding-top: 1.5rem;
+    color: var(--backgroundColor);
+    .fa-pinterest, .fa-twitter-square {
+      margin-left: var(--spacing-2);
+    }
+  }
+}
+
+
+main {
+  margin: 0 auto;
+  max-width: $maxWidth;
+}
+
+.caption {
+  display: flex;
+  h3, .book {
+    margin-top: var(--spacing-4);
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+  .book {
+    padding-top: 2px;
+    padding-left: var(--spacing-1);
+  }
+  h3 {
+    padding: 0 var(--spacing-1);
+  }
+}
+
+aside {
+  padding: var(--spacing-1);
+  // background: var(--backgroundColor);
+  h3 {
+    font-weight: normal;
+    margin: var(--spacing-1) 0;
+  }
+  .post-items {
+    display: flex;
+    justify-content: left;
+    .post-date {
+      font-family: Helvetica;
+      padding-top: var(--spacing-px);
+      // letter-spacing: -1px;
+      // width: 7.75rem;
+      width: 8rem;
+      white-space: nowrap;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+article {
+  background: var(--backgroundColor);
+  padding: var(--spacing-2);
+
+  h2 {
+    padding: 0;
+    margin: var(--spacing-1) 0;
+    font-weight: normal;
+    border-bottom: 1px solid $blue;
+  }
+  h3 {
+    font-weight: normal;
+    border-bottom: 1px solid var(--ghBorderColor);
+  }
+  .date-items {
+    display: flex;
+    margin-top: var(--spacing-2);
+    .date {
+      margin-left: var(--spacing-1);
+      font-family: Helvetica;
+      font-size: var(--fontSize-4);
+    }
+  }
+
+}
+
+nav {
+  margin-top: var(--spacing-4);
+  display: flex;
+  font-family: Helvetica;
+  font-size: var(--fontSize-2);
+  a {
+    padding-top: 3px;
+    text-decoration: none;
+  }
+  .blank {
+    flex-grow: 1;
+  }
+}
+
+footer {
+  margin: 0 auto;
+  max-width: $maxWidth;
+  padding-top: var(--spacing-3);
+  padding-left: var(--spacing-1);
+}
+
+
+.emoji {
+  display: inline-block;
+  vertical-align: -10px;
+  // position: relative;
+  margin-left: 4px;
+}
+
+
+// @media (max-width: 48rem) {
+//   header {
+//     h1, h2, .icons {
+//       margin-left: $spacing-8;
+//     }
+//   }
+//   main, footer {
+//     margin: 0 $spacing-8;
+//   }
+// }
+
+// @media (max-width: 42rem) {
+
+//   header {
+//     height: 16rem;
+//     h1, h2, .icons {
+//       margin-left: 1rem;
+//     }
+//     h1 {
+//       margin-top: 0;
+//       padding-top: 2rem;
+//     }
+//   }
+//   main {
+//     margin: 0;
+//     padding: 0 $spacing-1;
+//     .caption {
+//       margin: $spacing-3 0;
+//     }
+//   }
+
+//   aside {
+//     .post-items {
+//       margin-left: 0;
+//       .post-date {
+//         width: 6.725rem;
+//         white-space: nowrap;
+//       }
+//     }
+//   }
+
+//   img {
+//     width: 100%;
+//     display: block;
+//     margin: 0 auto;
+//   }
+
+//   code {
+//     font-size: $fontSize-1;
+//   }
+
+//   footer {
+//     margin: 0;
+//     padding: 0 $spacing-1;
+//     hr {
+//       margin-top: $spacing-4;
+//     }
+//   }
+
+// }
