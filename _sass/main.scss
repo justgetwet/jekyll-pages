@@ -1,7 +1,7 @@
 @import url(styles.css);
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Damion&family=Rock+Salt&display=swap');
 
-$headerFont: Calibri, Candara, Segoe, "Segoe U", Optima, Arial, sans-serif; // Candar
+// $headerFont: Calibri, Candara, Segoe, "Segoe U", Optima, Arial, sans-serif; // Candar
 $blue: #092237;
 $gray: #3b3b3b;
 // $lightgray: #e6e5ef;
@@ -10,10 +10,10 @@ $headerHeight: 21rem;
 $maxWidth: 52rem;
 // heroicons
 .h-6, .w-6 {
-  padding-top: 5px;
+  padding-top: 6px;
   height: 20px;
   width: 20px;
-  color: $blue;
+  color: $gray;
 }
 // font awesome icons
 .fa-github {
@@ -37,7 +37,6 @@ body {
 header {
   background-color: $blue;
   height: $headerHeight;
-
   h1, h2, .header-icons {
     margin: 0 auto;
     max-width: $maxWidth;
@@ -45,12 +44,12 @@ header {
   }
 
   h1 {
-    padding-top: 4rem;
+    padding-top: 5rem;
     font-size: var(--fontSize-8);
     color: var(--backgroundColor);
   }
   h2 {
-    font-size: var(--fontSize-5);
+    font-size: var(--fontSize-4);
     color: var(--ghBorderColor);
   }
   a {
@@ -76,12 +75,12 @@ main {
 .caption {
   display: flex;
   h3, .book {
-    margin-top: var(--spacing-4);
+    margin-top: var(--spacing-5);
     margin-bottom: 0;
     font-weight: normal;
   }
   .book {
-    padding-top: 2px;
+    // padding-top: 2px;
     padding-left: var(--spacing-1);
   }
   h3 {
@@ -93,18 +92,19 @@ aside {
   padding: var(--spacing-1);
   // background: var(--backgroundColor);
   h3 {
-    font-weight: normal;
+    font-size: var(--fontSize-4);
     margin: var(--spacing-1) 0;
   }
   .post-items {
     display: flex;
     justify-content: left;
+    align-items: center;
     .post-date {
       font-family: Helvetica;
-      padding-top: var(--spacing-px);
+      font-size: var(--fontSize-3);
+      // padding-top: 6px;
       // letter-spacing: -1px;
-      // width: 7.75rem;
-      width: 8rem;
+      width: 7.25rem;
       white-space: nowrap;
     }
     a {
@@ -129,11 +129,12 @@ article {
   }
   .date-items {
     display: flex;
+    align-items: center;
     margin-top: var(--spacing-2);
     .date {
       margin-left: var(--spacing-1);
       font-family: Helvetica;
-      font-size: var(--fontSize-4);
+      font-size: var(--fontSize-3);
     }
   }
 
@@ -142,10 +143,11 @@ article {
 nav {
   margin-top: var(--spacing-4);
   display: flex;
+  align-items: center;
   font-family: Helvetica;
   font-size: var(--fontSize-2);
   a {
-    padding-top: 3px;
+    // padding-top: 3px;
     text-decoration: none;
   }
   .blank {
@@ -156,7 +158,7 @@ nav {
 footer {
   margin: 0 auto;
   max-width: $maxWidth;
-  padding-top: var(--spacing-3);
+  padding-top: var(--spacing-2);
   padding-left: var(--spacing-1);
 }
 
