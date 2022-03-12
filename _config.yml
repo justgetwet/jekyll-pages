@@ -1,6 +1,5 @@
 url: https://justgetwet.github.io
-baseurl: /pages
-lang: ja-JP
+baseurl: /jekyll-pages
 title: Github Pages
 description: Note to Self about Environment Setting
 
