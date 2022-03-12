@@ -212,11 +212,21 @@ footer {
 }
 
 
+.page-title {
+  h2 {
+    padding: 0;
+    margin-left: var(--spacing-1);
+    // margin-top: var(--spacing-2);
+    margin-bottom: 0;
+    // border-bottom: 1px solid $blue;
+  }
+}
+
 .emoji {
   display: inline-block;
-  vertical-align: -10px;
-  // position: relative;
-  margin-left: 4px;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-bottom: 1px;
 }
 
 
