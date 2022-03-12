@@ -5,14 +5,16 @@ title: Top Page
 
 <main>
   <div class="caption">
-    <div class="book">{% include icons/book-open.svg %}</div>
-    <h3>Article</h3>
+    <!-- <div class="book">{% include icons/book-open.svg %}</div> -->
+    <div class="newspaper">{% include icons/newspaper.svg %}</div>
+    <h2>Posts</h2>
   </div>
     <aside>
       {% for post in site.posts %}
       <h3>
         <div class="post-items">
-          <div class="post-date">{{ post.date | date: "%b %d, %Y"}}</div>
+          <div class="post-date">{{ post.date | date: "%b %d,"}}</div>
+          <div class="post-year">{{post.date | date: "%Y"}}</div>
           <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </div>
       </h3>

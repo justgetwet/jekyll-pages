@@ -5,13 +5,10 @@ layout: default
 <main>
   <article>
     <div class="date-items">
-      <div>{%- include icons/calendar.svg -%}</div>
+      <div class="calendar">{%- include icons/calendar.svg -%}</div>
       <div class="date">{{ page.date | date: "%b %d, %Y" }}</div>
     </div>
     <h2>{{ page.title }}</h2>
-    <!-- <div class="post-hr">
-      <hr>
-    </div> -->
     {{ content }}
   </article>
   {% include nav.html %}

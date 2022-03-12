@@ -1,20 +1,31 @@
 @import url(styles.css);
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Damion&family=Rock+Salt&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Damion&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
-// $headerFont: Calibri, Candara, Segoe, "Segoe U", Optima, Arial, sans-serif; // Candar
 $blue: #092237;
 $gray: #3b3b3b;
 // $lightgray: #e6e5ef;
 $lightgray: #faf9fb;
 $headerHeight: 21rem;
-$maxWidth: 52rem;
+$maxWidth: 43rem;
 // heroicons
 .h-6, .w-6 {
-  padding-top: 6px;
+  // padding-top: 6px;
+  vertical-align: middle;
   height: 20px;
   width: 20px;
   color: $gray;
 }
+
+.h-5, .w-5 {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  color: $blue;
+}
+
 // font awesome icons
 .fa-github {
   width: 31px; // 496
@@ -32,6 +43,7 @@ $maxWidth: 52rem;
 body {
   background-color: $lightgray;
   font-family: var(--bodyFont);
+  // font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -39,6 +51,8 @@ header {
   height: $headerHeight;
   h1, h2, .header-icons {
     margin: 0 auto;
+    font-family: Lato;
+
     max-width: $maxWidth;
     padding-left: var(--spacing-3);
   }
@@ -46,10 +60,12 @@ header {
   h1 {
     padding-top: 5rem;
     font-size: var(--fontSize-8);
+    font-weight: 900;
     color: var(--backgroundColor);
   }
   h2 {
     font-size: var(--fontSize-4);
+    font-weight: 700;
     color: var(--ghBorderColor);
   }
   a {
@@ -75,41 +91,65 @@ main {
 // Article
 .caption {
   display: flex;
-  h3, .book {
-    margin-top: var(--spacing-5);
+  .newspaper, h2 {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-4);
+    margin-left: var(--spacing-1);
     margin-bottom: 0;
   }
-  .book {
-    padding-top: var(--spacing-px);
-    padding-left: var(--spacing-1);
+  .newspaper {
+    padding-left: var(--spacing-px);
   }
-  h3 {
-    padding: 0 var(--spacing-1);
+  // .book {
+  //   padding-bottom: 3px;
+  //   // padding-left: var(--spacing-1);
+  // }
+  h2 {
+    // padding-left: var(--spacing-1);
+    font-family: Lato;
+    font-size: var(--fontSize-4);
+    font-weight: 700;
+    color: $blue;
   }
 }
 
 aside {
   padding: var(--spacing-1);
+  margin-left: 2px;
   // background: var(--backgroundColor);
   h3 {
     font-size: var(--fontSize-4);
     margin: var(--spacing-1) 0;
+    font-weight: normal;
   }
   .post-items {
     display: flex;
     justify-content: left;
-    align-items: center;
+
+    .post-date, .post-year {
+      display: flex;
+      align-items: center;
+      font-family: Lato;
+      font-weight: 400;
+      font-size: var(--fontSize-2);
+    }
     .post-date {
-      font-family: Helvetica;
-      font-size: var(--fontSize-3);
-      // padding-top: 6px;
-      // letter-spacing: -1px;
-      width: 7.25rem;
+      width: 3.625rem;
       white-space: nowrap;
     }
+    .post-year {
+      width: 3.125rem;
+      white-space: nowrap;
+    }
+
     a {
       text-decoration: none;
+      &:hover {
+        font-weight: bold;
+      }
     }
+
   }
 }
 
@@ -119,35 +159,42 @@ article {
 
   h2 {
     padding: 0;
-    margin: var(--spacing-1) 0;
-    font-weight: normal;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-3);
+    font-weight: bold;
     border-bottom: 1px solid $blue;
   }
   h3 {
-    font-weight: normal;
+    font-weight: bold;
     border-bottom: 1px solid var(--ghBorderColor);
   }
   .date-items {
     display: flex;
-    align-items: center;
     margin-top: var(--spacing-2);
+    // .calender, .date {
+    //   display: flex;
+    //   align-items: center;
+    // }
     .date {
       margin-left: var(--spacing-1);
-      font-family: Helvetica;
-      font-size: var(--fontSize-3);
+      padding-top: var(--spacing-px);
+      font-family: Lato;
+      font-weight: 400;
+      font-size: var(--fontSize-2);
     }
   }
 
 }
 
 nav {
+  padding: var(--spacing-1);
   margin-top: var(--spacing-4);
   display: flex;
-  align-items: center;
-  font-family: Helvetica;
+  font-family: Lato;
+  font-weight: 400;
   font-size: var(--fontSize-2);
   a {
-    // padding-top: 3px;
+    padding-top: var(--spacing-px);
     text-decoration: none;
   }
   .blank {
@@ -159,7 +206,9 @@ footer {
   margin: 0 auto;
   max-width: $maxWidth;
   padding-top: var(--spacing-2);
-  padding-left: var(--spacing-1);
+  padding-left: var(--spacing-2);
+  font-family: Lato;
+  font-weight: 400;
 }
 
 
@@ -231,3 +280,4 @@ footer {
 //   }
 
 // }
+
