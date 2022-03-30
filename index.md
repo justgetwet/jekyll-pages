@@ -6,8 +6,8 @@ title: Top Page
 <main>
   <div class="caption">
     <!-- <div class="book">{% include icons/book-open.svg %}</div> -->
-    <div class="newspaper">{% include icons/newspaper.svg %}</div>
-    <h2>Posts</h2>
+    <div class="newspaper">{% include icons/pencil.svg %}</div>
+    <h2>Articles</h2>
   </div>
     <aside>
       {% for post in site.posts %}
