@@ -9,7 +9,8 @@ $gray: #3b3b3b;
 // $lightgray: #e6e5ef;
 $lightgray: #faf9fb;
 $headerHeight: 21rem;
-$maxWidth: 43rem;
+// $maxWidth: 43rem;
+$maxWidth: 48rem;
 // heroicons
 .h-6, .w-6 {
   // padding-top: 6px;
@@ -52,7 +53,6 @@ header {
   h1, h2, .header-icons {
     margin: 0 auto;
     font-family: Lato;
-
     max-width: $maxWidth;
     padding-left: var(--spacing-3);
   }
@@ -80,6 +80,14 @@ header {
       margin-left: var(--spacing-2);
     }
   }
+  // .header-sub {
+  //   display: flex;
+  //   padding-top: 1.5rem;
+  //   color: var(--backgroundColor);
+  //   h2, a {
+  //     margin-left: var(--spacing-1);
+  //   }
+  // }
 }
 
 
@@ -289,4 +297,3 @@ footer {
 //   }
 
 // }
-
