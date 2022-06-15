@@ -4,6 +4,7 @@ title: 基本のデータ
 ---
 s
 ```python
+# scrape_races.py
 ua = {"User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.57"}
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -29,8 +30,6 @@ def get_dfs(url):
             print(f"It's no table! {url}")
     return dfs
 
-if __name__ == "__main__":
-
 ```
 
 
@@ -43,59 +42,64 @@ urlに、日付 + コースコード + 開催コード + レース番号
 def strj(x):
     return str(x).rjust(2, "0")
 
-races = []
-races += [(f"01{strj(i)}", "川崎", f"11{strj(i)}") for i in range(1, 5)]
-races += [(f"01{strj(i)}", "川崎", f"11{strj(i-1)}") for i in range(6, 8)]
-races += [(f"01{strj(i+9)}", "船橋", f"10{strj(i)}") for i in range(1, 6)]
-# print(races[0])
-# ("0101", "川崎", "1101")
+def race_tuples():
+    races = []
+    races += [(f"01{strj(i)}", "川崎", f"11{strj(i)}") for i in range(1, 5)]
+    races += [(f"01{strj(i)}", "川崎", f"11{strj(i-1)}") for i in range(6, 8)]
+    races += [(f"01{strj(i+9)}", "船橋", f"10{strj(i)}") for i in range(1, 6)]
+    return races
+
 ```
 
 for で回す
 
 ```python
-data = []
-for i, (dt, course, hold) in enumerate(races):
-    for n in range(1, 13):
-        race = str(n).rjust(2, "0")
-        target_code = dt + course_d[course] + hold + race
 
-        result_url = nankan_url + "/result/" + yyyy + target_code + ".do"
-        dfs = get_dfs(result_url)
-        if not dfs: # レースなし
-            print(f"{dt} {race}R is nothing..")
-            continue
-        else:
-            df = dfs[0]
-            if not df.columns[0] == "着": # 結果なし
-                print(f"{dt} {race}R has no result..")
+if __name__ == "__main__":
+
+    nankan_url =  "https://www.nankankeiba.com"
+    yyyy = "2022"
+    course_d = { "浦和": "18", "船橋": "19", "大井": "20", "川崎": "21" }
+
+    data = []
+    for i, (dt, course, hold) in enumerate(races):
+        for n in range(1, 13):
+            race = str(n).rjust(2, "0")
+            target_code = dt + course_d[course] + hold + race
+
+            result_url = nankan_url + "/result/" + yyyy + target_code + ".do"
+            dfs = get_dfs(result_url)
+            if not dfs: # レースなし
+                print(f"{dt} {race}R is nothing..")
                 continue
-        df = [df for df in dfs if df.columns[0] == "天候"][0]
-        condition = df["天候"][0] + "/" + df["馬場"][0].split()[1]
+            else:
+                df = dfs[0]
+                if not df.columns[0] == "着": # 結果なし
+                    print(f"{dt} {race}R has no result..")
+                    continue
+            df = [df for df in dfs if df.columns[0] == "天候"][0]
+            condition = df["天候"][0] + "/" + df["馬場"][0].split()[1]
 
-        raceno = course + " " + race + "R"
+            raceno = course + " " + race + "R"
 
-        info_url = nankan_url + "/race_info/" + yyyy + target_code + ".do"
-        soup = get_soup(info_url)
-        racename = soup.select_one("span.race-name").text
-        racename = re.sub("\u3000", " ", racename).strip()
+            info_url = nankan_url + "/race_info/" + yyyy + target_code + ".do"
+            soup = get_soup(info_url)
+            racename = soup.select_one("span.race-name").text
+            racename = re.sub("\u3000", " ", racename).strip()
 
-        tag = soup.select_one("div#race-data01-a")
-        dist = tag.select_one("a").text.strip()
-        dist = dist.strip("ダ")
+            tag = soup.select_one("div#race-data01-a")
+            dist = tag.select_one("a").text.strip()
+            dist = dist.strip("ダ")
 
-        entry_df = get_dfs(info_url)[0]
-        head_count = str(len(entry_df)) + "頭"
+            entry_df = get_dfs(info_url)[0]
+            head_count = str(len(entry_df)) + "頭"
 
-        t = dt, raceno, racename, dist, head_count, condition, target_code
-        print(t)
-        data.append(t)
-```
+            t = dt, raceno, racename, dist, head_count, condition, target_code
+            print(t)
+            data.append(t)
 
-pickleする
+    filepath = "./data/" + "races_2022.pickle"
+    with open(filepath, "wb") as f:
+        pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
 
-```python
-filename = "./data/" + "races_2022.pickle"
-with open(filename, "wb") as f:
-    pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
 ```
