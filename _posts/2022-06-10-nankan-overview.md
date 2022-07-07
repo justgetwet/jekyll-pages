@@ -16,8 +16,8 @@ def slash_dt(s):
     # "0101" -> "01/01"
     return datetime.datetime.strptime(s, "%m%d").strftime("%m/%d")
 
-filename = "./data/" + "races_2022.pickle"
-with open(filename, "rb") as f:
+filepath = "./data/" + "races_2022.pickle"
+with open(filepath, "rb") as f:
     races = pickle.load(f)
 
 print("2022/" + slash_dt(races[0][0]), "->", slash_dt(races[-1][0]), len(races), "races", "\n")
