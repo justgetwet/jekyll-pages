@@ -11,7 +11,7 @@ title: パリミューチュアル方式のシュミレート
 
 14頭立てのレースで常に1番の馬に掛けた場合の100万回のシュミレート
 
-```Python
+```python
 import numpy as np
 from numpy.random import default_rng
 rng = default_rng()

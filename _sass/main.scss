@@ -6,6 +6,9 @@
 
 $blue: #092237;
 // $blue: #586e75;
+$green: #586e75;
+$lightgreen: #859900;
+
 $gray: #3b3b3b;
 // $lightgray: #e6e5ef;
 $lightgray: #faf9fb;
@@ -76,7 +79,6 @@ header {
   .header-icons {
     display: flex;
     padding-top: 1.5rem;
-    color: var(--backgroundColor);
     .fa-pinterest, .fa-twitter-square {
       margin-left: var(--spacing-2);
     }

@@ -3,21 +3,21 @@
 
 :root {
   --base03:    #002b36;
-  --base02:    #073642;
+  --base02:    #073642; /* no use */
   --base01:    #586e75;
   --base00:    #657b83;
-  /* $base0:     #839496;
-  $base1:     #93a1a1;
-  $base2:     #eee8d5;
-  $base3:     #fdf6e3;
-  $yellow:    #b58900;
-  $orange:    #cb4b16;
-  $red:       #dc322f;
-  $magenta:   #d33682;
-  $violet:    #6c71c4;
-  $blue:      #268bd2;
-  $cyan:      #2aa198;
-  $green:     #859900; */
+  --base0:     #839496;
+  --base1:     #93a1a1;
+  --base2:     #eee8d5;
+  --base3:     #fdf6e3;
+  --yellow:    #b58900;
+  --orange:    #cb4b16;
+  --red:       #dc322f;
+  --magenta:   #d33682;
+  --violet:    #6c71c4;
+  --blue:      #268bd2;
+  --cyan:      #2aa198;
+  --green:     #859900;
 }
 
 
@@ -25,84 +25,84 @@
   color: var(--base01);
 }
 .highlight .err {
-  color: #002b36;
-  background-color: #dc322f;
+  color: var(--base03);
+  background-color: var(--red);
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
-  color: #657b83;
+  color: var(--base00);
 }
 .highlight .cp {
-  color: #b58900;
+  color: var(--yellow);
 }
 .highlight .nt {
-  color: #b58900;
+  color: var(--yellow);
 }
 .highlight .o, .highlight .ow {
-  color: #93a1a1;
+  color: var(--base1);
 }
 .highlight .p, .highlight .pi {
-  color: #93a1a1;
+  color: var(--base1);
 }
 .highlight .gi {
-  color: #859900;
+  color: var(--green);
 }
 .highlight .gd {
-  color: #dc322f;
+  color: var(--red);
 }
 .highlight .gh {
-  color: #268bd2;
-  background-color: #002b36;
+  color: var(--blue);
+  background-color: var(--base03);
   font-weight: bold;
 }
 .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #6c71c4;
+  color: var(--violet);
 }
 .highlight .kc {
-  color: #cb4b16;
+  color: var(--orange);
 }
 .highlight .kt {
-  color: #cb4b16;
+  color: var(--orange);
 }
 .highlight .kd {
-  color: #cb4b16;
+  color: var(--orange);
 }
 .highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #859900;
+  color: var(--green);
 }
 .highlight .sa {
-  color: #6c71c4;
+  color: var(--violet);
 }
 .highlight .sr {
-  color: #2aa198;
+  color: var(--cyan);
 }
 .highlight .si { /* { } */
-  /* color: #d33682; */
-  color: #b58900;
+  /* color: var(--magenta); */
+  color: var(--violet);
 }
 .highlight .se { /* \u3000 */
-  /* color: #d33682; */
-  color: #859900;
+  /* color: var(--magenta); */
+  color: var(--green);
 }
 .highlight .nn {
-  color: #b58900;
+  color: var(--yellow);
 }
 .highlight .nc {
-  color: #b58900;
+  color: var(--yellow);
 }
 .highlight .no {
-  color: #b58900;
+  color: var(--yellow);
 }
 .highlight .na {
-  color: #268bd2;
+  color: var(--blue);
 }
 .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
-  color: #859900;
+  color: var(--green);
 }
 .highlight .ss {
-  color: #859900;
+  color: var(--green);
 }
 
 .highlight {
-  /* background-color: #fcfcfc; */
-  background-color: #eee8d5;
+  background-color: #fcfcfc;
+  /* background-color: var(--base2); */
 }
