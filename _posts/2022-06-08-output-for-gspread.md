@@ -56,4 +56,12 @@ if __name__ == "__main__":
 
     worksheets = connect_gspred()
     ws = worksheets[0]
+
+    for i, race in enumerate(rarces):
+        target_url = race.split()[-1]
+        url = nankan_url + "/race_info/" + yyyy + target_url + ".do"
+        soup = get_soup(url)
+        print(soup.title)
+        # ws.append_row(values)
+
 ```
