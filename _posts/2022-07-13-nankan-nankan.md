@@ -67,10 +67,7 @@ from selenium.common.exceptions import TimeoutException
 
 # import sys
 
-inet_id = 'CWUYACZB'
-member_id = '11065494'
-p_ars = '7662'
-pw = '5852'
+
 
 DRIVER = "../python-chromedriver-binary-103.0.5060.53.0-py38h50d1736_0/lib/python3.8/site-packages/chromedriver_binary/chromedriver"
 chrome_service = fs.Service(executable_path=DRIVER)
