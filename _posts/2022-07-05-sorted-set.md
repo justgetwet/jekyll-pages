@@ -16,9 +16,11 @@ s
 
 スライスを使いコピーのリストでループ
 
-```pythn 
+```pythn
 for e in ls[:]:
     if re.match("spam", e)
         ls.remove(e)
 
 ```
+
+ss
